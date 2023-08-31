@@ -9,113 +9,113 @@ public interface ExampleConstants {
   /** End of File. */
   int EOF = 0;
   /** RegularExpression Id. */
-  int WRITE = 5;
+  int WRITE = 6;
   /** RegularExpression Id. */
-  int READ = 6;
+  int READ = 7;
   /** RegularExpression Id. */
-  int THIS = 7;
+  int THIS = 8;
   /** RegularExpression Id. */
-  int DO = 8;
+  int DO = 9;
   /** RegularExpression Id. */
-  int BODY = 9;
+  int BODY = 10;
   /** RegularExpression Id. */
-  int DESCRIPTION = 10;
+  int DESCRIPTION = 11;
   /** RegularExpression Id. */
-  int DECLARATION = 11;
+  int DECLARATION = 12;
   /** RegularExpression Id. */
-  int DESIGNATE = 12;
+  int DESIGNATE = 13;
   /** RegularExpression Id. */
-  int AVALIATE = 13;
+  int AVALIATE = 14;
   /** RegularExpression Id. */
-  int REPEAT = 14;
+  int REPEAT = 15;
   /** RegularExpression Id. */
-  int CONSTANT = 15;
+  int CONSTANT = 16;
   /** RegularExpression Id. */
-  int VARIABLE = 16;
+  int VARIABLE = 17;
   /** RegularExpression Id. */
-  int AND = 17;
+  int AND = 18;
   /** RegularExpression Id. */
-  int OR = 18;
+  int OR = 19;
   /** RegularExpression Id. */
-  int AS = 19;
+  int AS = 20;
   /** RegularExpression Id. */
-  int OPLUS = 20;
+  int OPLUS = 21;
   /** RegularExpression Id. */
-  int OMINUS = 21;
+  int OMINUS = 22;
   /** RegularExpression Id. */
-  int OMULTIPLY = 22;
+  int OMULTIPLY = 23;
   /** RegularExpression Id. */
-  int OPOWER = 23;
+  int OPOWER = 24;
   /** RegularExpression Id. */
-  int ODIV = 24;
+  int ODIV = 25;
   /** RegularExpression Id. */
-  int OMOD = 25;
+  int OMOD = 26;
   /** RegularExpression Id. */
-  int OEQ = 26;
+  int OEQ = 27;
   /** RegularExpression Id. */
-  int ODEQ = 27;
+  int ODEQ = 28;
   /** RegularExpression Id. */
-  int ONEQ = 28;
+  int ONEQ = 29;
   /** RegularExpression Id. */
-  int OLT = 29;
+  int OLT = 30;
   /** RegularExpression Id. */
-  int OGT = 30;
+  int OGT = 31;
   /** RegularExpression Id. */
-  int OLTE = 31;
+  int OLTE = 32;
   /** RegularExpression Id. */
-  int OGTE = 32;
+  int OGTE = 33;
   /** RegularExpression Id. */
-  int OAND = 33;
+  int OAND = 34;
   /** RegularExpression Id. */
-  int OOR = 34;
+  int OOR = 35;
   /** RegularExpression Id. */
-  int ONOT = 35;
+  int ONOT = 36;
   /** RegularExpression Id. */
-  int TYPE = 36;
+  int TYPE = 37;
   /** RegularExpression Id. */
-  int IS = 37;
+  int IS = 38;
   /** RegularExpression Id. */
-  int OCBRACKETS = 38;
+  int OCBRACKETS = 39;
   /** RegularExpression Id. */
-  int CCBRACKETS = 39;
+  int CCBRACKETS = 40;
   /** RegularExpression Id. */
-  int OBRACKETS = 40;
+  int OBRACKETS = 41;
   /** RegularExpression Id. */
-  int CBRACKETS = 41;
+  int CBRACKETS = 42;
   /** RegularExpression Id. */
-  int OPARENTHESES = 42;
+  int OPARENTHESES = 43;
   /** RegularExpression Id. */
-  int CPARENTHESES = 43;
+  int CPARENTHESES = 44;
   /** RegularExpression Id. */
-  int TRUE = 44;
+  int TRUE = 45;
   /** RegularExpression Id. */
-  int UNTRUE = 45;
+  int UNTRUE = 46;
   /** RegularExpression Id. */
-  int FALSE = 46;
+  int FALSE = 47;
   /** RegularExpression Id. */
-  int RESULT = 47;
+  int RESULT = 48;
   /** RegularExpression Id. */
-  int SLASH = 48;
+  int SLASH = 49;
   /** RegularExpression Id. */
-  int DOT = 49;
+  int DOT = 50;
   /** RegularExpression Id. */
-  int COMMA = 50;
+  int COMMA = 51;
   /** RegularExpression Id. */
-  int ALL = 51;
+  int ALL = 52;
   /** RegularExpression Id. */
-  int ALL_TYPES = 52;
+  int ALL_TYPES = 53;
   /** RegularExpression Id. */
-  int NUM = 53;
+  int NUM = 54;
   /** RegularExpression Id. */
-  int ID = 54;
+  int ID = 55;
   /** RegularExpression Id. */
-  int INT = 55;
+  int INT = 56;
   /** RegularExpression Id. */
-  int REAL = 56;
+  int REAL = 57;
   /** RegularExpression Id. */
-  int STRING = 57;
+  int STRING = 58;
   /** RegularExpression Id. */
-  int LOGIC = 58;
+  int LOGIC = 59;
 
   /** Lexical state. */
   int DEFAULT = 0;
@@ -127,6 +127,7 @@ public interface ExampleConstants {
     "\"\\t\"",
     "\"\\n\"",
     "\"\\r\"",
+    "<token of kind 5>",
     "\"write\"",
     "\"read\"",
     "\"this\"",

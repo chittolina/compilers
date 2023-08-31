@@ -1,5 +1,6 @@
 options {
     LOOKAHEAD = 2;
+    IGNORE_CASE = true;
 }
 PARSER_BEGIN(Example)
 
@@ -22,13 +23,9 @@ SKIP : {
     "\n" |
     "\r"
 }
-TOKEN : {
-    <NUM: (["0"-"9"])> |
-    <ID: ["a"-"z", "A"-"Z"] (["a"-"z", "A"-"Z", "0"-"9"])*> |
-    <INT: (["0"-"9"])+ > |
-    <REAL: (["0"-"9"])+ "." (["0"-"9"])* > |
-    <STRING: "\"" ( ~["\""] )* "\"" > |
-    <LOGIC: "true" | "false" >
+
+SKIP : {
+  <"//" (~["\n","\r"])* ("\n"|"\r")>
 }
 
 TOKEN : {
@@ -81,6 +78,16 @@ TOKEN : {
     <ALL: "all"> |
     <ALL_TYPES: "integer" | "real" |  "string" |  "logic">
 
+}
+
+
+TOKEN : {
+    <NUM: (["0"-"9"])> |
+    <ID: ["a"-"z", "A"-"Z"] (["a"-"z", "A"-"Z", "0"-"9"])*> |
+    <INT: (["0"-"9"])+ > |
+    <REAL: (["0"-"9"])+ "." (["0"-"9"])* > |
+    <STRING: "\"" ( ~["\""] )* "\"" > |
+    <LOGIC: "true" | "false" >
 }
 
 // Forma geral de um programa

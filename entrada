@@ -9,14 +9,16 @@ do this programinha []
     ]
 
 2.
-do this programinha []
+dO this progrAminha []
+    // this is a comment
+
     declaration type [
         id is { legal } .
     ]
-    body [
+    bodY [
         write all this [id1] .
     ]
-    description esse eh um programa muito daora
+    descriptIon esse eh um programa muito daora
 
 3. entrada invalida
 do this programinha []
