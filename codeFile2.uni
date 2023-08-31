@@ -1,11 +1,32 @@
 dO this programinha []
+    // this is a comment
+    /* asdkasdajs
+    daskdja
+    sdajsd
+    ajsd
+    lkasdjas
+    */
+
     declaration type [
         id is { legal } .
     ]
 
+    declaration constant and variable [
+        as variable
+            b1{3} is logic .
+        as constant
+            a1,a2 is string = 1 .
+            a3,a4 is string = 2 .
+    ]
+
+
     body [
         write all this [id1] .
         read this [a938, a1930] .
+
+        repeat this 10 << 20 [
+            read this [a1, a2] .
+        ] .
 
         avaliate this 1 >> 2
             true result [

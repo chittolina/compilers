@@ -60,7 +60,6 @@ TOKEN : {
     <CONSTANT: "constant"> |
     <VARIABLE: "variable"> |
     <AND: "and"> |
-    <OR: "or"> |
     <AS: "as"> |
     <OPLUS: "+" > |
     <OMINUS: "-" > |
@@ -95,7 +94,6 @@ TOKEN : {
     <COMMA: ","> |
     <ALL: "all"> |
     <ALL_TYPES: "integer" | "real" |  "string" |  "logic">
-
 }
 
 
@@ -112,16 +110,15 @@ TOKEN : {
 void FormaGeral():
 {Token t;}
 {
-   t = <DO> <THIS> <ID> <OBRACKETS> <CBRACKETS> Enumerado() VariavelEConstante() <BODY> <OBRACKETS> Comandos() <CBRACKETS> ((<DESCRIPTION>)(<ID>)*)? <EOF>
+   t = <DO> <THIS> <ID> <OBRACKETS> <CBRACKETS> Enumerado() [VariavelEConstante()] <BODY> <OBRACKETS> Comandos() <CBRACKETS> ((<DESCRIPTION>)(<ID>)*)? <EOF>
    { mostrarTokens(t); }
 }
 
 // Forma geral de um enumerado
 void Enumerado():
-{Token t;}
+{}
 {
-   t= <DECLARATION> <TYPE> <OBRACKETS> <ID> <IS> <OCBRACKETS>ListaIdentificadores() <CCBRACKETS> <DOT> <CBRACKETS>
-   { mostrarTokens(t); }
+   <DECLARATION> <TYPE> <OBRACKETS> <ID> <IS> <OCBRACKETS>ListaIdentificadores() <CCBRACKETS> <DOT> <CBRACKETS>
 }
 
 // Forma geral da declaracao de constantes e variaveis
@@ -174,7 +171,7 @@ void Repeticao():
 void Comandos():
 {}
 {
-    (SaidaDados()  | EntradaDados() | Enumerado() | Repeticao() | Selecao() | Atribuicao())*
+    (SaidaDados()  | EntradaDados() | Repeticao() | Selecao() | Atribuicao())*
 }
 
 
@@ -216,7 +213,7 @@ void ListaIdentificadoresVariavel():
 
 void Expressao() : { }
 {
-  ExpressaoRelacional() ( ( <AND> | <OR> ) ExpressaoRelacional() )*
+  ExpressaoRelacional() ( ( <OAND> | <OOR> ) ExpressaoRelacional() )*
 }
 
 void ExpressaoRelacional() : { }
