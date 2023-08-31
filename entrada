@@ -1,0 +1,61 @@
+// Forma geral
+1.
+do this programinha []
+    declaration type [
+        id is { legal } .
+    ]
+    body [
+        write all this [id1] .
+    ]
+
+2.
+do this programinha []
+    declaration type [
+        id is { legal } .
+    ]
+    body [
+        write all this [id1] .
+    ]
+    description esse eh um programa muito daora
+
+3. entrada invalida
+do this programinha []
+    declaration type [
+        id is { legal } .
+    body [
+        write all this [id1] .
+    ]
+
+
+
+// Enumerado
+declaration type [
+    id1 is {id2, id3} .
+]
+
+// Declaracao constante e variavel
+declaration constant and variable [
+    as constant
+        a1,a2 is string = 1 .
+        a3,a4 is string = 2 .
+    as variable
+        b1{3} is logic .
+]
+
+// Atribuicao
+designate this id1, id2, id3 as 837313
+
+// Entrada de dados
+read this [ id1, id2, id3, id4 ] .
+
+// Saida de dados
+write all this [id1, id2, id3, id4 ] .
+
+// Selecao
+avaliate this 7893127
+    true result []
+    untrue result [] .
+
+// Repeticao
+repeat this 3892389
+    [] .
