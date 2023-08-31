@@ -7,7 +7,7 @@ public class Example {
   /** Main entry point. */
   public static void main(String args[]) throws ParseException {
     Example parser = new Example(System.in);
-    parser.Enumerado();
+    parser.Expressao();
   }
 }
 
@@ -35,8 +35,24 @@ TOKEN : {
     <CONSTANT: "constant"> |
     <VARIABLE: "variable"> |
     <AND: "and"> |
+    <OR: "or"> |
     <AS: "as"> |
-    <EQ: "="> |
+    <OPLUS: "+" > |
+    <OMINUS: "-" > |
+    <OMULTIPLY: "*" > |
+    <OPOWER: "**" > |
+    <ODIV: "%" > |
+    <OMOD: "%%" > |
+    <OEQ: "="> |
+    <ODEQ: "=="> |
+    <ONEQ: "!=" > |
+    <OLT: "<<" > |
+    <OGT: ">>" > |
+    <OLTE: "<<=" > |
+    <OGTE: ">>=" > |
+    <OAND: "&" > |
+    <OOR: "|" > |
+    <ONOT: "!" > |
     <TYPE: "type"> |
     <IS: "is"> |
     <OCBRACKETS: "{"> |
@@ -58,7 +74,11 @@ TOKEN : {
 
 TOKEN : {
     <NUM: (["0"-"9"])> |
-    <ID: ["a"-"z", "A"-"Z"] (["a"-"z", "A"-"Z", "0"-"9"])*>
+    <ID: ["a"-"z", "A"-"Z"] (["a"-"z", "A"-"Z", "0"-"9"])*> |
+    <INT: (["0"-"9"])+ > |
+    <REAL: (["0"-"9"])+ "." (["0"-"9"])* > |
+    <STRING: "\"" ( ~["\""] )* "\"" > |
+    <LOGIC: "true" | "false" >
 }
 
 
@@ -136,7 +156,7 @@ void Comandos():
 void Constantes():
 {}
 {
-    <AS> <CONSTANT> (ListaIdentificadores() <IS> <ALL_TYPES> <EQ> (<NUM>)* <DOT>)*
+    <AS> <CONSTANT> (ListaIdentificadores() <IS> <ALL_TYPES> <OEQ> (<NUM>)* <DOT>)*
 }
 
 void Variaveis():
@@ -146,12 +166,12 @@ void Variaveis():
 }
 
 
-void Expressao():
-{}
-{
-    // TODO: Atualizar aqui, por enquanto so aceita numeros
-    (<NUM>)*
-}
+//void Expressao():
+//{}
+//{
+//    // TODO: Atualizar aqui, por enquanto so aceita numeros
+//    (<NUM>)*
+//}
 
 void ComentarioLinha():
 {}
@@ -171,6 +191,34 @@ void ListaIdentificadoresVariavel():
 {}
 {
     (<ID> <OCBRACKETS> <NUM> <CCBRACKETS>) (<COMMA>  (<ID> <OCBRACKETS> <NUM> <CCBRACKETS>)) *
+}
+
+
+//
+
+void Expressao() : { }
+{
+  ExpressaoRelacional() ( ( <AND> | <OR> ) ExpressaoRelacional() )*
+}
+
+void ExpressaoRelacional() : { }
+{
+  ExpressaoAritimetica() ( ( <OEQ> | <ONEQ> | <OLT> | <OGT> | <OLTE> | <OGTE> ) ExpressaoAritimetica() )?
+}
+
+void ExpressaoAritimetica() : { }
+{
+  Termos() ( ( <OPLUS> | <OMINUS> ) Termos() )*
+}
+
+void Termos() : { }
+{
+  Fator() ( ( <OMULTIPLY> | <SLASH> | <ODIV> | <OMOD> ) Fator() )*
+}
+
+void Fator() : { }
+{
+  <ID> | <INT> |<NUM>| <REAL> | <STRING> | <LOGIC> | <ONOT> Fator() | <OPARENTHESES> Expressao() <CPARENTHESES>
 }
 
 JAVACODE
