@@ -35,47 +35,87 @@ public interface ExampleConstants {
   /** RegularExpression Id. */
   int AND = 17;
   /** RegularExpression Id. */
-  int AS = 18;
+  int OR = 18;
   /** RegularExpression Id. */
-  int EQ = 19;
+  int AS = 19;
   /** RegularExpression Id. */
-  int TYPE = 20;
+  int OPLUS = 20;
   /** RegularExpression Id. */
-  int IS = 21;
+  int OMINUS = 21;
   /** RegularExpression Id. */
-  int OCBRACKETS = 22;
+  int OMULTIPLY = 22;
   /** RegularExpression Id. */
-  int CCBRACKETS = 23;
+  int OPOWER = 23;
   /** RegularExpression Id. */
-  int OBRACKETS = 24;
+  int ODIV = 24;
   /** RegularExpression Id. */
-  int CBRACKETS = 25;
+  int OMOD = 25;
   /** RegularExpression Id. */
-  int OPARENTHESES = 26;
+  int OEQ = 26;
   /** RegularExpression Id. */
-  int CPARENTHESES = 27;
+  int ODEQ = 27;
   /** RegularExpression Id. */
-  int TRUE = 28;
+  int ONEQ = 28;
   /** RegularExpression Id. */
-  int UNTRUE = 29;
+  int OLT = 29;
   /** RegularExpression Id. */
-  int FALSE = 30;
+  int OGT = 30;
   /** RegularExpression Id. */
-  int RESULT = 31;
+  int OLTE = 31;
   /** RegularExpression Id. */
-  int SLASH = 32;
+  int OGTE = 32;
   /** RegularExpression Id. */
-  int DOT = 33;
+  int OAND = 33;
   /** RegularExpression Id. */
-  int COMMA = 34;
+  int OOR = 34;
   /** RegularExpression Id. */
-  int ALL = 35;
+  int ONOT = 35;
   /** RegularExpression Id. */
-  int ALL_TYPES = 36;
+  int TYPE = 36;
   /** RegularExpression Id. */
-  int NUM = 37;
+  int IS = 37;
   /** RegularExpression Id. */
-  int ID = 38;
+  int OCBRACKETS = 38;
+  /** RegularExpression Id. */
+  int CCBRACKETS = 39;
+  /** RegularExpression Id. */
+  int OBRACKETS = 40;
+  /** RegularExpression Id. */
+  int CBRACKETS = 41;
+  /** RegularExpression Id. */
+  int OPARENTHESES = 42;
+  /** RegularExpression Id. */
+  int CPARENTHESES = 43;
+  /** RegularExpression Id. */
+  int TRUE = 44;
+  /** RegularExpression Id. */
+  int UNTRUE = 45;
+  /** RegularExpression Id. */
+  int FALSE = 46;
+  /** RegularExpression Id. */
+  int RESULT = 47;
+  /** RegularExpression Id. */
+  int SLASH = 48;
+  /** RegularExpression Id. */
+  int DOT = 49;
+  /** RegularExpression Id. */
+  int COMMA = 50;
+  /** RegularExpression Id. */
+  int ALL = 51;
+  /** RegularExpression Id. */
+  int ALL_TYPES = 52;
+  /** RegularExpression Id. */
+  int NUM = 53;
+  /** RegularExpression Id. */
+  int ID = 54;
+  /** RegularExpression Id. */
+  int INT = 55;
+  /** RegularExpression Id. */
+  int REAL = 56;
+  /** RegularExpression Id. */
+  int STRING = 57;
+  /** RegularExpression Id. */
+  int LOGIC = 58;
 
   /** Lexical state. */
   int DEFAULT = 0;
@@ -100,8 +140,24 @@ public interface ExampleConstants {
     "\"constant\"",
     "\"variable\"",
     "\"and\"",
+    "\"or\"",
     "\"as\"",
+    "\"+\"",
+    "\"-\"",
+    "\"*\"",
+    "\"**\"",
+    "\"%\"",
+    "\"%%\"",
     "\"=\"",
+    "\"==\"",
+    "\"!=\"",
+    "\"<<\"",
+    "\">>\"",
+    "\"<<=\"",
+    "\">>=\"",
+    "\"&\"",
+    "\"|\"",
+    "\"!\"",
     "\"type\"",
     "\"is\"",
     "\"{\"",
@@ -121,6 +177,10 @@ public interface ExampleConstants {
     "<ALL_TYPES>",
     "<NUM>",
     "<ID>",
+    "<INT>",
+    "<REAL>",
+    "<STRING>",
+    "<LOGIC>",
   };
 
 }
