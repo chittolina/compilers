@@ -34,6 +34,16 @@ declaration type [
 ]
 
 // Declaracao constante e variavel
+1.
+declaration constant and variable [
+    as variable
+        b1{3} is logic .
+    as constant
+        a1,a2 is string = 1 .
+        a3,a4 is string = 2 .
+]
+
+2.
 declaration constant and variable [
     as constant
         a1,a2 is string = 1 .
