@@ -1,3 +1,3 @@
 javacc exparser.jj
 javac Example.java
-java Example entrada
+java Example ./codeFile.uni

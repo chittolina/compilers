@@ -5,13 +5,24 @@ options {
 
 PARSER_BEGIN(Example)
 
+import java.io.FileReader;
+import java.io.FileNotFoundException;
 
 public class Example {
 
   /** Main entry point. */
   public static void main(String args[]) throws ParseException {
-    Example parser = new Example(System.in);
-    parser.FormaGeral();
+    if (args.length > 0) {
+        try {
+            FileReader fileReader = new FileReader(args[0]);
+            Example parser = new Example(fileReader);
+            parser.FormaGeral();
+        } catch (FileNotFoundException e) {
+        }
+    } else {
+        Example parser = new Example(System.in);
+        parser.FormaGeral();
+    }
   }
 }
 
@@ -101,7 +112,7 @@ TOKEN : {
 void FormaGeral():
 {Token t;}
 {
-   t = <DO> <THIS> <ID> <OBRACKETS> <CBRACKETS> Enumerado() <BODY> <OBRACKETS> Comandos() <CBRACKETS> ((<DESCRIPTION>)(<ID>)*)? <EOF>
+   t = <DO> <THIS> <ID> <OBRACKETS> <CBRACKETS> Enumerado() VariavelEConstante() <BODY> <OBRACKETS> Comandos() <CBRACKETS> ((<DESCRIPTION>)(<ID>)*)? <EOF>
    { mostrarTokens(t); }
 }
 
