@@ -3,31 +3,34 @@ options {
     IGNORE_CASE = true;
 }
 
-PARSER_BEGIN(Example)
+PARSER_BEGIN(Compile2023)
 
 import java.io.FileReader;
 import java.io.FileNotFoundException;
 
-public class Example {
+public class Compile2023 {
 
   /** Main entry point. */
-  public static void main(String args[]) throws ParseException {
+  public static void main(String args[]) throws Exception  {
+    Compile2023 parser = null;
     if (args.length > 0) {
         try {
             FileReader fileReader = new FileReader(args[0]);
-            Example parser = new Example(fileReader);
-            parser.FormaGeral();
+            parser = new Compile2023(fileReader);
         } catch (FileNotFoundException e) {
         }
     } else {
-        Example parser = new Example(System.in);
+        parser = new Compile2023(System.in);
+    }
+
+    if(parser!= null){
         parser.FormaGeral();
     }
   }
 }
 
 
-PARSER_END(Example)
+PARSER_END(Compile2023)
 
 SKIP : {
     " " |
@@ -139,8 +142,14 @@ void Atribuicao():
 void EntradaDados() :
 {}
 {
-   <READ>
-   <THIS> <OBRACKETS> ListaIdentificadores()<CBRACKETS> <DOT>
+    try{
+        <READ>
+       <THIS> <OBRACKETS> ListaIdentificadores() <CBRACKETS> <DOT>
+    }catch (ParseException e) {
+        System.err.println("erro erro erro erro erro ");
+        System.err.println(e.toString());
+    }
+
 }
 
 // Forma geral do comando de saida de dados
@@ -194,10 +203,11 @@ void ComentarioLinha():
     <SLASH><SLASH> (<ID>)*
 }
 
-void ListaIdentificadores() :
+void ListaIdentificadores():
 {}
 {
     <ID> (<COMMA> <ID>)*
+
 }
 
 // Lista de identificadores para variavel pois devem possuir a constante numerica unitaria

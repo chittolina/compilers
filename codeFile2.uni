@@ -22,13 +22,13 @@ dO this programinha []
 
     body [
         write all this [id1] .
-        read this [a938, a1930] .
+        read ths [a938, a1930] .
 
         repeat this 10 << 20 [
             read this [a1, a2] .
         ] .
 
-        avaliate this 1 >> 2
+        avaliate this (1 >> 2 & 2<<=3)
             true result [
                 read this [a1, a2] .
             ]

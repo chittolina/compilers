@@ -1,3 +1,3 @@
-javacc exparser.jj
-javac Example.java
-java Example ./codeFile2.uni
+javacc compile2023.jj
+javac Compile2023.java
+java Compile2023 ./codeFile2.uni
